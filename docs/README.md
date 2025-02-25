@@ -1,5 +1,5 @@
 
-# IAcob
+# SVM quantique
 
 ## Informations générales
 - **Titre complet du projet :** Exploration et mise en œuvre de techniques de machine learning quantiques (e.g. Kernel methods: SVM)
