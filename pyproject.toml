@@ -9,8 +9,8 @@ dependencies = [
     "pdf2image>=1.17.0",
     "pennylane>=0.40.0",
     "pytesseract>=0.3.13",
-    "qiskit-machine-learning>=0.8.2",
     "qiskit>=1.4.0",
+    "qiskit-machine-learning>=0.8.2",
     "scikit-learn>=1.6.1",
     "stouputils>=1.0.20",
 ]
