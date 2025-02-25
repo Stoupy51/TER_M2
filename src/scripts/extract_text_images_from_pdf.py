@@ -1,3 +1,4 @@
+
 import sys
 from pathlib import Path
 import pytesseract
@@ -53,12 +54,13 @@ Error: Poppler is not found. Please:
         print(f"Unexpected error: {e}")
         return False
 
-def extract_text_from_pdf(pdf_path: str, output_path: str) -> None:
-    """Extract text from PDF using OCR and save as PDF.
+def extract_text_from_pdf(pdf_path: str, output_pdf_path: str, output_txt_path: str) -> None:
+    """Extract text from PDF using OCR and save as both PDF and TXT.
 
     Args:
         pdf_path (str): Path to the input PDF file
-        output_path (str): Path where to save the extracted text as PDF
+        output_pdf_path (str): Path where to save the extracted text as PDF
+        output_txt_path (str): Path where to save the extracted text as TXT
     """
     try:
         # Specify the path to your extracted Poppler bin directory
@@ -73,6 +75,10 @@ def extract_text_from_pdf(pdf_path: str, output_path: str) -> None:
             for image in images
         )
 
+        # Save as TXT file
+        with open(output_txt_path, 'w', encoding='utf-8') as txt_file:
+            txt_file.write(extracted_text)
+
         # Create PDF
         pdf: FPDF = FPDF()
         pdf.add_page()
@@ -81,25 +87,31 @@ def extract_text_from_pdf(pdf_path: str, output_path: str) -> None:
         
         # Split text into lines and add to PDF, handling encoding
         for line in extracted_text.split('\n'):
-            # Replace problematic characters and encode as UTF-8
+            # Replace problematic characters and encode as ASCII
             clean_line = line.encode('ascii', 'replace').decode('ascii')
             pdf.cell(0, 10, clean_line, ln=True)
             
         # Save as PDF with UTF-8 encoding
-        pdf.output(output_path, 'F')
+        pdf.output(output_pdf_path, 'F')
             
-        print(f"Text successfully extracted and saved as PDF to: {output_path}")
+        print(f"Text successfully extracted and saved as PDF to: {output_pdf_path}")
+        print(f"Text also saved as TXT to: {output_txt_path}")
             
     except Exception as e:
         print(f"Error during text extraction: {e}")
         sys.exit(1)
 
-def main(pdf_path: str = "./docs/doc-reduit.pdf", output_pdf_path: str = "./docs/extracted_text.pdf") -> None:
+def main(
+    pdf_path: str = "./docs/doc-reduit.pdf",
+    output_pdf_path: str = "./docs/extracted_text.pdf", 
+    output_txt_path: str = "./docs/extracted_text.txt"
+) -> None:
     """Main function to handle PDF text extraction.
     
     Args:
         pdf_path (str): Path to the input PDF file. Defaults to "./docs/doc-reduit.pdf"
         output_pdf_path (str): Path where to save the extracted text as PDF. Defaults to "./docs/extracted_text.pdf"
+        output_txt_path (str): Path where to save the extracted text as TXT. Defaults to "./docs/extracted_text.txt"
     """
     # Ensure input PDF exists
     if not Path(pdf_path).exists():
@@ -112,8 +124,8 @@ def main(pdf_path: str = "./docs/doc-reduit.pdf", output_pdf_path: str = "./docs
     if not check_poppler_installation():
         sys.exit(1)
         
-    # Extract text and save as PDF
-    extract_text_from_pdf(pdf_path, output_pdf_path)
+    # Extract text and save as PDF and TXT
+    extract_text_from_pdf(pdf_path, output_pdf_path, output_txt_path)
 
 if __name__ == "__main__":
     main()
