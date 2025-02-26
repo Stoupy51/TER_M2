@@ -11,13 +11,13 @@ from sklearn.preprocessing import MaxAbsScaler
 from sklearn.metrics import accuracy_score
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
-from qiskit import QuantumCircuit, IBMQ
+from qiskit import QuantumCircuit#, IBMQ
 from qiskit.circuit import Parameter, ParameterVector
 from qiskit.circuit.library import ZZFeatureMap
-from qiskit.providers.aer import AerSimulator
-from qiskit.providers.ibmq import least_busy
+# from qiskit.providers.aer import AerSimulator
+# from qiskit.providers.ibmq import least_busy
 from qiskit_machine_learning.algorithms import QSVC
-from qiskit_machine_learning.kernels import QuantumKernel
+# from qiskit_machine_learning.kernels import QuantumKernel
 
 # Set seed
 SEED: int = 1234
@@ -43,7 +43,7 @@ def load_and_preprocess_data() -> tuple[np.ndarray, np.ndarray, np.ndarray, np.n
     scaler: MaxAbsScaler = MaxAbsScaler()
     x_tr = scaler.fit_transform(x_tr)
     x_test = scaler.transform(x_test)
-    x_test = np.clip(x_test, 0, 1)	# Clip dataset to be between 0 and 1
+    x_test = np.clip(x_test, 0, 1)	# Clip dataset to be between 0 and 1    # type: ignore
     
     return x_tr, x_test, y_tr, y_test
 
