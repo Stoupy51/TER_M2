@@ -130,6 +130,24 @@ wheels = [
 ]
 
 [[package]]
+name = "docutils"
+version = "0.21.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz", hash = "sha256:3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f", size = 2204444 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/d7/9322c609343d929e75e7e5e6255e614fcc67572cfd083959cdef3b7aad79/docutils-0.21.2-py3-none-any.whl", hash = "sha256:dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2", size = 587408 },
+]
+
+[[package]]
+name = "fastdtw"
+version = "0.3.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/99/43/30f2d8db076f216b15c10db663b46e22d1750b1ebacd7af6e62b83d6ab98/fastdtw-0.3.4.tar.gz", hash = "sha256:2350fa6ec36bcad186eaf81f46eff35181baf04e324f522de8aeb43d0243f64f", size = 133402 }
+
+[[package]]
 name = "fpdf"
 version = "1.7.2"
 source = { registry = "https://pypi.org/simple" }
@@ -160,6 +178,28 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/64/33/60135848598c076ce4b231e1b1895170f45fbcaeaa2c9d5e38b04db70c35/joblib-1.4.2.tar.gz", hash = "sha256:2382c5816b2636fbd20a09e0f4e9dad4736765fdfb7dca582943b9c1366b3f0e", size = 2116621 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl", hash = "sha256:06d478d5674cbc267e7496a410ee875abd68e4340feff4490bcb7afb88060ae6", size = 301817 },
+]
+
+[[package]]
+name = "m2r2"
+version = "0.3.3.post2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "docutils" },
+    { name = "mistune" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ee/09/fe73f1739c727ba119cbd67c43b65316af56e55f5501ba601c79dd7ba080/m2r2-0.3.3.post2.tar.gz", hash = "sha256:e62bcb0e74b3ce19cda0737a0556b04cf4a43b785072fcef474558f2c1482ca8", size = 17005 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/57/57/164112275965de407680ac176f96434d02329539438324c0ab8084df0343/m2r2-0.3.3.post2-py3-none-any.whl", hash = "sha256:86157721eb6eabcd54d4eea7195890cc58fa6188b8d0abea633383cfbb5e11e3", size = 11207 },
+]
+
+[[package]]
+name = "mistune"
+version = "0.8.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/2d/a4/509f6e7783ddd35482feda27bc7f72e65b5e7dc910eca4ab2164daf9c577/mistune-0.8.4.tar.gz", hash = "sha256:59a3429db53c50b5c6bcc8a07f8848cb00d7dc8bdb431a4ab41920d201d4756e", size = 58322 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/09/ec/4b43dae793655b7d8a25f76119624350b4d65eb663459eb9603d7f1f0345/mistune-0.8.4-py2.py3-none-any.whl", hash = "sha256:88a1051873018da288eee8538d476dffe1262495144b33ecb586c4ab266bb8d4", size = 16220 },
 ]
 
 [[package]]
@@ -379,7 +419,7 @@ wheels = [
 
 [[package]]
 name = "qiskit"
-version = "1.4.0"
+version = "1.2.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dill" },
@@ -392,35 +432,74 @@ dependencies = [
     { name = "sympy" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/aa/67/ad3654ecabb3785a2b2a2747bc37bce8074153761b8f0415ee208cf67e7f/qiskit-1.4.0.tar.gz", hash = "sha256:c5dcdf171bbec743c90c9b9e9f94a422ec90fcbf908c904d54b6b91f562fad83", size = 3933810 }
+sdist = { url = "https://files.pythonhosted.org/packages/99/2a/c3f63a216b88fd01417b9fcd47512553463c7247575ce06f40b9269b6fba/qiskit-1.2.4.tar.gz", hash = "sha256:3f30b1fc6c66dec240428991da75cc6c35cc75152baff8daf3f8ca71b60684e8", size = 3640923 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/80/28/6ce1290a85afec236554314bb3f4f0f0d518ef2cbbf01d0c508860a659ed/qiskit-1.4.0-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:9a6ac6f124f97d62f1843ce2aaf5a6c0311fd25c90a0d2b90a600e0fb2346732", size = 6567539 },
-    { url = "https://files.pythonhosted.org/packages/47/f0/faafa9ced24353ce58f4114f5e23ede6a3360a1b142e7daf4efacf22aed9/qiskit-1.4.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:bf1dd1a2d9d5375dd712594dd7de2d9d3cae8cbb22c820a4c0f88b26c03a4a64", size = 6242939 },
-    { url = "https://files.pythonhosted.org/packages/5c/91/f2442baa598d88d32918ec3a5aac3d311e5a138c3d39e3b8bdacdca57c07/qiskit-1.4.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b563fefc4485cdd44338ad091311c2c72a7855d5c0d0bfdfc6cb35f9050ff800", size = 6392786 },
-    { url = "https://files.pythonhosted.org/packages/26/45/8d8e52572187c405604436e7866cec9b250b626d28478c4260667ed11ab0/qiskit-1.4.0-cp39-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:585b6a7d3001ee619af08816d59492840f5650ac831ae62e24877049605abfc5", size = 6726907 },
-    { url = "https://files.pythonhosted.org/packages/db/5d/848ecee68192a4fffd1195f9749f2b7eaa751ff9cf6cf9846d7dbfefa74d/qiskit-1.4.0-cp39-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:4b818df95c835d419ebcb64ca4cec924c17c9f56486b7d52e636c2f258d2083e", size = 6796769 },
-    { url = "https://files.pythonhosted.org/packages/d9/56/4474fb46faf829f6e67cd1b0d884c3e5dfdc5f401ed8c136248fb8246414/qiskit-1.4.0-cp39-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:b50295c80bffd21194837ee63dae3de0bbf1a432c3571e6e6bb6f8464fd1ee0c", size = 7882280 },
-    { url = "https://files.pythonhosted.org/packages/f4/ab/fad45892bcc207ef7eed141d9b81e840c78b53da6701cc0dd5d51eb499f3/qiskit-1.4.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a4efe9ee228c8601b6f0c6b9613d981ae9b0cce8161efc4deb8432800b143d40", size = 6748438 },
-    { url = "https://files.pythonhosted.org/packages/7c/8a/b85b9db39bb7ee61fc7093dddc99a2ca18b1d84f2ee9b3ef5e2c039877f4/qiskit-1.4.0-cp39-abi3-win32.whl", hash = "sha256:f47cdd3d4df71581fd9ccffe5c1cb3f10e3e2c3254f8cf0e963e192ed48633f9", size = 6138354 },
-    { url = "https://files.pythonhosted.org/packages/73/16/6354248452dbd4aca537460a75effb59d9b01b4101a17df8235d345c86c8/qiskit-1.4.0-cp39-abi3-win_amd64.whl", hash = "sha256:9cd963e0b74983d8c1a6db5b64446bf57598d181a7ad85bd5e22911b5251303d", size = 6499047 },
+    { url = "https://files.pythonhosted.org/packages/73/5e/c7b34b1862c05e798bce18d632bfec5a4df7f86958659356b333390b827d/qiskit-1.2.4-cp38-abi3-macosx_10_9_universal2.whl", hash = "sha256:1cdabddeed74956ac22db8b11b3479044a305b0895b142198f11a75e745aa079", size = 6841939 },
+    { url = "https://files.pythonhosted.org/packages/52/07/889a5ff9ca2e4f32428836adc51f6764e5c906029138ab877b99e95651c1/qiskit-1.2.4-cp38-abi3-macosx_10_9_x86_64.whl", hash = "sha256:9daad1c3a0608c4a32a03112d0650cc51ced2cab16479703230acedafafa0548", size = 4623509 },
+    { url = "https://files.pythonhosted.org/packages/3f/14/64e86bebb3a98a0bc0cd29cfaeffc7ad5178579e239329e8b21e664863a1/qiskit-1.2.4-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:3394ec724adeb481c02b050ac6e5929ca5e1f91ab94a1d571dadf0c702d6967e", size = 4460750 },
+    { url = "https://files.pythonhosted.org/packages/80/75/7e4aa946c8e11065568a78cc8c6687667bb3376cc704fc16504d9e14bc5d/qiskit-1.2.4-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:124777b0d9caf40932e02d1d2c6be3a12ff058990e6ae55f45a315a9a51da75b", size = 4621828 },
+    { url = "https://files.pythonhosted.org/packages/81/1c/8794ad953a5be69e5ab037f33a2e7fa6a0276d10f8f76c25e9f28b4897ce/qiskit-1.2.4-cp38-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2c8d9fa7fdb0cf7727f27a1881cc9f9be7de2b6aaf7cab6861686e1a6e34d6c8", size = 4790612 },
+    { url = "https://files.pythonhosted.org/packages/5b/e6/ef18152dde40386ff6bca4b50907852d47027ad7f4b3cd1b1fb5b108558e/qiskit-1.2.4-cp38-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:3a973089d54f379006df8ae9b0d406e909e02b11a9390b3e2f50aefd5e8070eb", size = 4663037 },
+    { url = "https://files.pythonhosted.org/packages/24/bc/1e44746a9157ca8881c8c978a316e8a1a8b5391d52b06150e0222bab9f76/qiskit-1.2.4-cp38-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:409b43d48e33e5bbc316fd85f44f29a71db2d5ff802affabc5ee355fe9573d7e", size = 5466671 },
+    { url = "https://files.pythonhosted.org/packages/9c/f2/708f8d18d22461a0394aad48232accd8e3e55ff83ad49b8ad14c205603ea/qiskit-1.2.4-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a66303ab4f939080ca0b8c4102040a89417a99f2621978c7bca8b1d5f6c6e103", size = 4751938 },
+    { url = "https://files.pythonhosted.org/packages/75/29/3197fd3fd05c446680d8c9c33fd00916500810347929983c2fbf25f46f04/qiskit-1.2.4-cp38-abi3-win32.whl", hash = "sha256:93aa20398c5ab79adb4baf89a76d034a7c608fcc5bcbbd77355314378583e56a", size = 4436558 },
+    { url = "https://files.pythonhosted.org/packages/25/0c/4952744fb8a6362029afa3dda15603ab4bbd9ac57d98ea4c0c75bdb88bc2/qiskit-1.2.4-cp38-abi3-win_amd64.whl", hash = "sha256:87175e179bbaa3d2e280f14fe90efa77d6d7521d58ee5afd9528ec6716a6d8e6", size = 4588617 },
+]
+
+[[package]]
+name = "qiskit-aer"
+version = "0.15.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "psutil" },
+    { name = "qiskit" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/37/39/044e35f1da0011fe44a3b2729b347851a452fc85e701b102dbdfbbbf6bd1/qiskit-aer-0.15.1.tar.gz", hash = "sha256:45f320790c9239bbe781a1ee14a329a20ad08878f01746fe405c836d202b2560", size = 6550165 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/e6/f2611ada4690bacac3073873865d29eed15244d4f4a76c44a5da3855ac3d/qiskit_aer-0.15.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:df16643006cf25a1ed477a120b6146859f09e8dee09ca720befb3a1febee9546", size = 2475586 },
+    { url = "https://files.pythonhosted.org/packages/7e/45/f35bc0971f7333cfeed6e28dc53d1c8a371f2177474176ce1c9585fa6d7d/qiskit_aer-0.15.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:1d22c96bae21dbe4b97c30785ead2c2b53f897938da49bca6b4ef29d187765a6", size = 2158945 },
+    { url = "https://files.pythonhosted.org/packages/9c/c0/c418189d92f92e713d6e096b9b5ead3b49d956465e7a952795b1763a80b3/qiskit_aer-0.15.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1288fd5c36235f5fedfc228956049e87bdd804cbc2b3a487a4453d9e7e72f420", size = 6420353 },
+    { url = "https://files.pythonhosted.org/packages/99/92/fde09045179e7a5e2bae4185f311fde9ab9ef843440ff4bc69742de59a86/qiskit_aer-0.15.1-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ca0783607942c724329172e21b53354c9d569420e02dbfd06c407ed588833cf6", size = 7939163 },
+    { url = "https://files.pythonhosted.org/packages/ca/a7/baa91866f9468322ec212508dd5629f15a08a374800dfb75dc25ae409590/qiskit_aer-0.15.1-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:cbad79290e4b850dca163b7960769a1a8db6d44abf232ecf0a6ce88740c83ab9", size = 7887094 },
+    { url = "https://files.pythonhosted.org/packages/80/ae/85e51a211b387af4cb7526fac6e7850ec1a7f674e4a16ba623c46dbc61ac/qiskit_aer-0.15.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f2257b4828df8cb3f37e153c220cd72f54a81d89875711efbc3ac2f265e0ae4a", size = 12339245 },
+    { url = "https://files.pythonhosted.org/packages/1a/b4/b171b94f276ca8a853a0fc1acb38515936ca55d09e2118b90c1a9b839fdf/qiskit_aer-0.15.1-cp312-cp312-win32.whl", hash = "sha256:0f8a3f97f1bbeabb7d229879f7a0b6b8709f864fbc13ae78ec1569a65033ea3b", size = 6896779 },
+    { url = "https://files.pythonhosted.org/packages/a7/eb/284cedc9cdeecd139939db70cf875806ca5df977d5af21e6fa09f1d82a8e/qiskit_aer-0.15.1-cp312-cp312-win_amd64.whl", hash = "sha256:af6501808b584b764e959af7a1edb2ef890c9a78f1ce418921dbdf6fd09ce0fc", size = 9519513 },
+]
+
+[[package]]
+name = "qiskit-algorithms"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "qiskit" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/76/f9/f5e95c3f9c3b886afa4f56adc58074af34e0e5bd0bde55e747b6cb45f0b2/qiskit-algorithms-0.3.0.tar.gz", hash = "sha256:02eedcbb079c6da371421a50cb296ff1dc6ce4a1c478ec521ff6e62c9bc53e10", size = 240473 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e0/2f/9a71fc36ff8de0188d4325399e1ad29c8fce2c2b427dae6c900003510943/qiskit_algorithms-0.3.0-py3-none-any.whl", hash = "sha256:8ae1aa8aafc32864890a31c06d19f100a79df6412350f1f4b8c124cd17b3f731", size = 308560 },
 ]
 
 [[package]]
 name = "qiskit-machine-learning"
-version = "0.8.2"
+version = "0.7.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dill" },
+    { name = "fastdtw" },
     { name = "numpy" },
     { name = "psutil" },
     { name = "qiskit" },
+    { name = "qiskit-algorithms" },
     { name = "scikit-learn" },
     { name = "scipy" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/93/4f28342cf27bd85595237e23b2bdd3a3405a0f0fe233a0a58cecbbac0ee8/qiskit_machine_learning-0.8.2.tar.gz", hash = "sha256:90ec0e96edb735181ec41a54d9461301584b1e660d7dfa51d51f285876c14d80", size = 216845 }
+sdist = { url = "https://files.pythonhosted.org/packages/32/be/1a340139239fd2ebebc70c545698a6830a702098f12e07791e94ea5d3820/qiskit-machine-learning-0.7.2.tar.gz", hash = "sha256:cd0a7cc562304ff74d4151d627d163a02d2f1d83e61e35b97e0a913141237964", size = 102930 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/12/3f/21001b66d28b789c1a32e97d8189ae153fa8d0994382fd0006b9138447bb/qiskit_machine_learning-0.8.2-py3-none-any.whl", hash = "sha256:168ff431a9424de782883ea7dbc683ee04058f8747f268af8614cd29f1547feb", size = 231612 },
+    { url = "https://files.pythonhosted.org/packages/7f/4a/ed252b41533f0fef82d0085339040277cdfba5c5ec7e816eefd92cf97b26/qiskit_machine_learning-0.7.2-py3-none-any.whl", hash = "sha256:e63c525e6fa5fd22e9005e3e09115c38c700823a6d693565d8811de206eed437", size = 97762 },
 ]
 
 [[package]]
@@ -573,14 +652,16 @@ wheels = [
 
 [[package]]
 name = "stouputils"
-version = "1.0.20"
+version = "1.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "m2r2" },
     { name = "pyyaml" },
     { name = "requests" },
+    { name = "toml" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/28/a1/f452b575f9b1365b2a8c5abac7d6868cf0fb34828764f87e72caa7f9f0c3/stouputils-1.0.20.tar.gz", hash = "sha256:dacb0badf8f44b17e4f0cb7274180692762e628dfb308eab521a09b912c6aa72", size = 28496 }
+sdist = { url = "https://files.pythonhosted.org/packages/32/c9/ba68edc1eb198fee3e6537376a3b6b0ba004c8c94c32ecefeed2dce6ae43/stouputils-1.2.1.tar.gz", hash = "sha256:80752f14830103e4a204a9e2b6bbe577367ffc32a060df3e47fe6c70f3557948", size = 32258 }
 
 [[package]]
 name = "symengine"
@@ -629,6 +710,8 @@ dependencies = [
     { name = "pennylane" },
     { name = "pytesseract" },
     { name = "qiskit" },
+    { name = "qiskit-aer" },
+    { name = "qiskit-algorithms" },
     { name = "qiskit-machine-learning" },
     { name = "scikit-learn" },
     { name = "stouputils" },
@@ -640,10 +723,12 @@ requires-dist = [
     { name = "pdf2image", specifier = ">=1.17.0" },
     { name = "pennylane", specifier = ">=0.40.0" },
     { name = "pytesseract", specifier = ">=0.3.13" },
-    { name = "qiskit", specifier = ">=1.4.0" },
-    { name = "qiskit-machine-learning", specifier = ">=0.8.2" },
+    { name = "qiskit", specifier = "==1.2.4" },
+    { name = "qiskit-aer", specifier = "==0.15.1" },
+    { name = "qiskit-algorithms", specifier = "==0.3.0" },
+    { name = "qiskit-machine-learning", specifier = "==0.7.2" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
-    { name = "stouputils", specifier = ">=1.0.20" },
+    { name = "stouputils", specifier = ">=1.2.1" },
 ]
 
 [[package]]
@@ -662,6 +747,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/bd/55/b5148dcbf72f5cde221f8bfe3b6a540da7aa1842f6b491ad979a6c8b84af/threadpoolctl-3.5.0.tar.gz", hash = "sha256:082433502dd922bf738de0d8bcc4fdcbf0979ff44c42bd40f5af8a282f6fa107", size = 41936 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl", hash = "sha256:56c1e26c150397e58c4926da8eeee87533b1e32bef131bd4bf6a2f45f3185467", size = 18414 },
+]
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f", size = 22253 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b", size = 16588 },
 ]
 
 [[package]]

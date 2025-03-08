@@ -14,10 +14,10 @@ from sklearn.svm import SVC
 from qiskit import QuantumCircuit#, IBMQ
 from qiskit.circuit import Parameter, ParameterVector
 from qiskit.circuit.library import ZZFeatureMap
-# from qiskit.providers.aer import AerSimulator
+from qiskit_aer import AerSimulator
 # from qiskit.providers.ibmq import least_busy
 from qiskit_machine_learning.algorithms import QSVC
-# from qiskit_machine_learning.kernels import QuantumKernel
+from qiskit_machine_learning.kernels import TrainableKernel as QuantumKernel
 
 # Set seed
 SEED: int = 1234
@@ -48,6 +48,7 @@ def load_and_preprocess_data() -> tuple[np.ndarray, np.ndarray, np.ndarray, np.n
     return x_tr, x_test, y_tr, y_test
 
 x_tr, x_test, y_tr, y_test = load_and_preprocess_data()
+stp.whatisit(x_tr, x_test, y_tr, y_test, max_length=25)
 
 
 ## 2. Quantum Kernel and Support Vector Machine
@@ -254,6 +255,11 @@ def qiskit_qsvm() -> None:
     Returns:
         None: This function prints the accuracy score.
     """
+    # PCA Transformation
+    pca: PCA = PCA(n_components=8)
+    xs_tr: np.ndarray = pca.fit_transform(x_tr)
+    xs_test: np.ndarray = pca.transform(x_test)
+
     # Quantum Circuit with Parameters
     # Example 1: Single parameter circuit
     parameter: Parameter = Parameter("x")
@@ -279,46 +285,46 @@ def qiskit_qsvm() -> None:
 qiskit_qsvm()
 
 
-## 7. Using IBM Quantum Devices
-def ibm_quantum_qsvm(ibm_token: str = "1234") -> None:
-    """ Implements Quantum SVM using IBM Quantum hardware.
+# ## 7. Using IBM Quantum Devices
+# def ibm_quantum_qsvm(ibm_token: str = "1234") -> None:
+#     """ Implements Quantum SVM using IBM Quantum hardware.
     
-    Sets up an IBM Quantum account, selects an appropriate quantum device,
-    and trains a Quantum SVM with dimensionality reduction.
+#     Sets up an IBM Quantum account, selects an appropriate quantum device,
+#     and trains a Quantum SVM with dimensionality reduction.
     
-    Note: To use this function, replace "1234" with your actual IBM token
+#     Note: To use this function, replace "1234" with your actual IBM token
     
-    Args:
-        ibm_token (str): IBM Quantum authentication token.
+#     Args:
+#         ibm_token (str): IBM Quantum authentication token.
         
-    Returns:
-        None: This function trains a model on IBM quantum hardware.
-    """
-    # IBM Quantum Account setup
-    IBMQ.save_account(ibm_token)
-    provider = IBMQ.load_account()
+#     Returns:
+#         None: This function trains a model on IBM quantum hardware.
+#     """
+#     # IBM Quantum Account setup
+#     IBMQ.save_account(ibm_token)
+#     provider = IBMQ.load_account()
     
-    # Device Selection
-    dev_list = provider.backends(
-        filters=lambda x: x.configuration().n_qubits >= 7,
-        simulator=False
-    )
-    dev = least_busy(dev_list)
+#     # Device Selection
+#     dev_list = provider.backends(
+#         filters=lambda x: x.configuration().n_qubits >= 7,
+#         simulator=False
+#     )
+#     dev = least_busy(dev_list)
     
-    # PCA and Quantum SVM
-    # Reduce dimensionality to 7 components
-    pca: PCA = PCA(n_components=7)
-    xss_tr: np.ndarray = pca.fit_transform(x_tr)
-    xss_test: np.ndarray = pca.transform(x_test)
+#     # PCA and Quantum SVM
+#     # Reduce dimensionality to 7 components
+#     pca: PCA = PCA(n_components=7)
+#     xss_tr: np.ndarray = pca.fit_transform(x_tr)
+#     xss_test: np.ndarray = pca.transform(x_test)
     
-    # Create feature map and quantum kernel
-    zzfm: ZZFeatureMap = ZZFeatureMap(7)
-    qkernel: QuantumKernel = QuantumKernel(feature_map=zzfm, quantum_instance=dev)
+#     # Create feature map and quantum kernel
+#     zzfm: ZZFeatureMap = ZZFeatureMap(7)
+#     qkernel: QuantumKernel = QuantumKernel(feature_map=zzfm, quantum_instance=dev)
     
-    # Train QSVC model
-    qsvm: QSVC = QSVC(quantum_kernel=qkernel)
-    qsvm.fit(xss_tr, y_tr)
+#     # Train QSVC model
+#     qsvm: QSVC = QSVC(quantum_kernel=qkernel)
+#     qsvm.fit(xss_tr, y_tr)
     
-    stp.info(f"IBM Quantum QSVM Accuracy: {accuracy_score(qsvm.predict(xss_test), y_test)}")
+#     stp.info(f"IBM Quantum QSVM Accuracy: {accuracy_score(qsvm.predict(xss_test), y_test)}")
 
-ibm_quantum_qsvm()
+# ibm_quantum_qsvm()
