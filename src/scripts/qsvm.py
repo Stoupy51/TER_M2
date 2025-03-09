@@ -17,7 +17,7 @@ from qiskit.circuit.library import ZZFeatureMap
 from qiskit_aer import AerSimulator
 # from qiskit.providers.ibmq import least_busy
 from qiskit_machine_learning.algorithms import QSVC
-from qiskit_machine_learning.kernels import TrainableKernel as QuantumKernel
+from qiskit_machine_learning.kernels import TrainableKernel
 
 # Set seed
 SEED: int = 1234
@@ -274,7 +274,7 @@ def qiskit_qsvm() -> None:
     
     # ZZFeatureMap and QuantumKernel
     zzfm: ZZFeatureMap = ZZFeatureMap(8)
-    qkernel: QuantumKernel = QuantumKernel(feature_map=zzfm, quantum_instance=AerSimulator())
+    qkernel: TrainableKernel = TrainableKernel(feature_map=zzfm, quantum_instance=AerSimulator())
     
     # QSVC: Quantum Support Vector Classification
     qsvm: QSVC = QSVC(quantum_kernel=qkernel)
