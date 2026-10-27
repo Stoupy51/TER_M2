@@ -15,4 +15,6 @@ dependencies = [
     "qiskit-aer==0.15.1",
     "qiskit-algorithms==0.3.0",
     "stouputils>=1.2.1",
+    "torch>=2.6.0",
+    "matplotlib>=3.10.1",
 ]
